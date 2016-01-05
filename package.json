@@ -1,6 +1,6 @@
 {
   "name": "teeny-weeny-router",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A teeny weeny front end router for single page apps",
   "main": "lib/index.js",
   "scripts": {
