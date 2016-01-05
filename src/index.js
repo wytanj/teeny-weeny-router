@@ -21,9 +21,10 @@ export default class TeenyWeenyRouter {
     Array.from(document.querySelectorAll('section'))
       .forEach(section => section.style.display = 'none')
 
-    Object.keys(this.routes).forEach(key => {
-      if (window.location.pathname === key) {
-        const route = this.routes[key]
+    this.routes.forEach(route => {
+      console.log(route)
+      console.log(route.router.test(window.location.pathname))
+      if (window.location.pathname.match(route.router)) {
         document.title = route.title
         document.querySelector(route.element).style.display = 'block'
       }
