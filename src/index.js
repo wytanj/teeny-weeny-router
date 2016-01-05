@@ -21,7 +21,7 @@ export default class TeenyWeenyRouter {
     Array.from(document.querySelectorAll('section'))
       .forEach(section => section.style.display = 'none')
 
-    this.routes.keys.forEach(key => {
+    Object.keys(this.routes).forEach(key => {
       if (window.location.pathname === this.routes[key]) {
         const route = this.routes[key]
         document.title = route.title
