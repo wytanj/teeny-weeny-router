@@ -22,7 +22,7 @@ export default class TeenyWeenyRouter {
       .forEach(section => section.style.display = 'none')
 
     Object.keys(this.routes).forEach(key => {
-      if (window.location.pathname === this.routes[key]) {
+      if (window.location.pathname === key) {
         const route = this.routes[key]
         document.title = route.title
         document.querySelector(route.element).style.display = 'block'
