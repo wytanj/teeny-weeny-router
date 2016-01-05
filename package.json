@@ -1,0 +1,19 @@
+{
+  "name": "teeny-weeny-router",
+  "version": "1.1.0",
+  "description": "A teeny weeny front end router for single page apps",
+  "main": "lib/index.js",
+  "scripts": {
+    "compile": "babel -d lib/ src/",
+    "prepublish": "npm run compile",
+    "test": "standard"
+  },
+  "author": "Albert Salim https://caalberts.xyz",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-polyfill": "^6.3.14",
+    "babel-preset-es2015": "^6.3.13",
+    "standard": "^5.4.1"
+  }
+}
