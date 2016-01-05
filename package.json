@@ -8,6 +8,14 @@
     "prepublish": "npm run compile",
     "test": "standard"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caalberts/teeny-weeny-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caalberts/teeny-weeny-router/issues"
+  },
+  "homepage": "https://github.com/caalberts/teeny-weeny-router#readme",
   "author": "Albert Salim https://caalberts.xyz",
   "license": "ISC",
   "devDependencies": {
