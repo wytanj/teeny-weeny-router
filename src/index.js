@@ -21,13 +21,13 @@ export default class TeenyWeenyRouter {
     Array.from(document.querySelectorAll('section'))
       .forEach(section => section.style.display = 'none')
 
-    this.routes.forEach(route => {
-      console.log(route)
-      console.log(route.router.test(window.location.pathname))
-      if (window.location.pathname.match(route.router)) {
-        document.title = route.title
-        document.querySelector(route.element).style.display = 'block'
-      }
+    const router = this.routes.sort((a, b) => {
+      return b.router.source.length - a.router.source.length
+    }).find(obj => {
+      return obj.router.test(window.location.pathname)
     })
+
+    document.title = router.title
+    document.querySelector(router.element).style.display = 'block'
   }
 }
