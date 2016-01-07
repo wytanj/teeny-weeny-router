@@ -6,19 +6,19 @@ module.exports = function (config) {
     sl_chrome: {
       base: 'SauceLabs',
       browserName: 'chrome',
-      platform: 'Windows 7',
-      version: '35'
+      platform: 'OS X 10.11',
+      version: '46'
     },
     sl_firefox: {
       base: 'SauceLabs',
       browserName: 'firefox',
       version: '30'
     },
-    sl_ios_safari: {
+    sl_safari: {
       base: 'SauceLabs',
-      browserName: 'iphone',
-      platform: 'OS X 10.9',
-      version: '7.1'
+      browserName: 'safari',
+      platform: 'OS X 10.11',
+      version: '9.0'
     },
     sl_ie_11: {
       base: 'SauceLabs',
@@ -94,7 +94,7 @@ module.exports = function (config) {
 
     // Continuous Integration mode
     // if true, Karma captures browsers, runs the tests and exits
-    singleRun: false,
+    singleRun: process.env.CI ? true : false,
 
     // Concurrency level
     // how many browser should be started simultaneous
