@@ -101,7 +101,7 @@ module.exports = function (config) {
     concurrency: Infinity,
 
     sauceLabs: {
-      testName: 'Test demo'
+      testName: 'Teeny Weeny Router Test'
     },
     customLaunchers: customLaunchers
   })
