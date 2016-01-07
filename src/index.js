@@ -1,20 +1,34 @@
 import 'babel-polyfill'
 
 export default class TeenyWeenyRouter {
-  constructor (routes, nav) {
+  constructor (routes) {
     this.routes = routes
+  }
 
-    window.addEventListener('popstate', event => {
-      console.log(event)
+  start () {
+    this._popStateHandler = () => {
       this.route()
-    })
+    }
+    window.addEventListener('popstate', this._popStateHandler)
 
-    document.querySelector(nav).addEventListener('change', event => {
-      window.history.pushState(null, '', event.target.value)
+    this._clickHandler = event => {
+      if (event.target.tagName === 'A') {
+        if (event.target.href.startsWith(window.location.origin)) {
+          event.preventDefault()
+          window.history.pushState(null, '', event.target.attributes.href.value)
+          this.route()
+        }
+      }
       this.route()
-    })
+    }
+    document.addEventListener('click', this._clickHandler)
 
     this.route()
+  }
+
+  stop () {
+    window.removeEventListener('popstate', this._popstateHandler)
+    document.removeEventListener('click', this._clickHandler)
   }
 
   route () {
