@@ -2,6 +2,9 @@
 
 [![Travis Build Status](https://img.shields.io/travis/caalberts/teeny-weeny-router.svg?style=flat-square)](https://travis-ci.org/caalberts/teeny-weeny-router)
 
+[![Codecov.io Status](https://img.shields.io/codecov/c/github/caalberts/teeny-weeny-router.svg?style=flat-square)](https://codecov.io/github/caalberts/teeny-weeny-router)
+
+
 A teeny weeny front end router for single page apps
 
 ## Usage
