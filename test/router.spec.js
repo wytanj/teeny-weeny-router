@@ -36,4 +36,10 @@ describe('Router navigation', () => {
     window.history.back()
     expect(callback).to.have.been.calledOnce
   })
+
+  it('should update window.location.pathname according to href', function () {
+    this.router.start()
+    document.querySelector('a').click()
+    expect(window.location.pathname).to.equal('/foo')
+  })
 })
