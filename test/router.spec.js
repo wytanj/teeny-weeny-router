@@ -42,4 +42,12 @@ describe('Router navigation', () => {
     document.querySelector('a').click()
     expect(window.location.pathname).to.equal('/foo')
   })
+
+  it('should not navigate when clicking on anything other than a link', function () {
+    const callback = sinon.stub()
+    this.router.start()
+    document.body.appendChild(document.createElement('button'))
+    document.querySelector('button').click()
+    expect(callback).to.have.not.been.called
+  })
 })
